@@ -19,6 +19,9 @@ float	g_offset_x;
 // Offset For Y
 float	g_offset_y;
 // Create Some Everyday Functions
+float color[3] = { 1.0, 0.0, 0.0 };
+int color_index = 0;
+
 bool InitGL()
 {
 	// Enable Smooth Shading
@@ -32,6 +35,305 @@ bool InitGL()
 	// The Type Of Depth Testing To Do	
 	glDepthFunc(GL_LEQUAL);
 	return TRUE;
+}
+void draw_star3D(float r, float g, float b)
+{
+	float d = 0.15;
+	r = r / 255.0;
+	g = g / 255.0;
+	b = b / 255.0;
+	glBegin(GL_TRIANGLES);
+	//0
+	glColor3f(r, g, b);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.2743, -0.089, 0);
+	//1
+	glColor3f(r, g, b);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//2
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//3
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.195, 0.233, 0);
+	//4
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.195, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//5
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r, g, b);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.2743, -0.089, 0);
+	//6	
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.2743, -0.089, 0);
+	glColor3f(r, g, b);
+	glVertex3f(-0.443, -0.610, 0);
+	//7
+	glColor3f(r, g, b);
+	glVertex3f(-0.443, -0.610, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//8
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0.443, -0.610, 0);
+	//9
+	glColor3f(r, g, b);
+	glVertex3f(0.443, -0.610, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.2743, -0.089, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	d = -d;
+	//10
+	glColor3f(r, g, b);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.2743, -0.089, 0);
+	//11
+	glColor3f(r, g, b);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//12
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//13
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.195, 0.233, 0);
+	//14
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.195, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//15
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r, g, b);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.2743, -0.089, 0);
+	//16	
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(-0.2743, -0.089, 0);
+	glColor3f(r, g, b);
+	glVertex3f(-0.443, -0.610, 0);
+	//17
+	glColor3f(r, g, b);
+	glVertex3f(-0.443, -0.610, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	//18
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0.443, -0.610, 0);
+	//19
+	glColor3f(r, g, b);
+	glVertex3f(0.443, -0.610, 0);
+	glColor3f(r / 10, g / 10, b / 10);
+	glVertex3f(0.2743, -0.089, 0);
+	glColor3f(r, g, b);
+	glVertex3f(0, 0, d);
+	// End
+	glEnd();
+}
+void draw_star3D()
+{
+	float d = 0.15;
+	glBegin(GL_TRIANGLES);
+	//0
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.2743, -0.089, 0);
+	//1
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//2
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//3
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.195, 0.233, 0);
+	//4
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.195, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//5
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.2743, -0.089, 0);
+	//6	
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.2743, -0.089, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.443, -0.610, 0);
+	//7
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.443, -0.610, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//8
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.443, -0.610, 0);
+	//9
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.443, -0.610, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.2743, -0.089, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	d = -d;
+	//10
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.2743, -0.089, 0);
+	//11
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.718, 0.233, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//12
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.195, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//13
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0.755, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.195, 0.233, 0);
+	//14
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.195, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//15
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.718, 0.233, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.2743, -0.089, 0);
+	//16	
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(-0.2743, -0.089, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.443, -0.610, 0);
+	//17
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(-0.443, -0.610, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	//18
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0, -0.377, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.443, -0.610, 0);
+	//19
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0.443, -0.610, 0);
+	glColor3f(0.4, 0.4, 0.1);
+	glVertex3f(0.2743, -0.089, 0);
+	glColor3f(1, 0.95, 0.01);
+	glVertex3f(0, 0, d);
+	// End
+	glEnd();
 }
 
 void display(void)   // Create The Display Function
@@ -84,155 +386,38 @@ void display(void)   // Create The Display Function
 	//glVertex2f(0, 1 * n);
 	//glColor3f(1, 0, 1);
 	//glVertex2f(0.6 * n, -0.9 * n);
+	//glEnd();	
 
-	//glEnd();
+	draw_star3D();
 
-	float d = 0.15;
-	glBegin(GL_TRIANGLES);
-	//0
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.718, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.2743, -0.089, 0);
-	//1
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.718, 0.233, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.195, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//2
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.195, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0.755, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//3
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0.755, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.195, 0.233, 0);
-	//4
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.195, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.718, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//5
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.718, 0.233, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.2743, -0.089, 0);
-	//6	
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.2743, -0.089, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.443, -0.610, 0);
-	//7
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.443, -0.610, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0, -0.377, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//8
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0, -0.377, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.443, -0.610, 0);
-	//9
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.443, -0.610, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.2743, -0.089, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	d = -d;
-	//10
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.718, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.2743, -0.089, 0);
-	//11
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.718, 0.233, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.195, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//12
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.195, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0.755, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//13
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0.755, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.195, 0.233, 0);
-	//14
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.195, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.718, 0.233, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//15
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.718, 0.233, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.2743, -0.089, 0);
-	//16	
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(-0.2743, -0.089, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.443, -0.610, 0);
-	//17
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(-0.443, -0.610, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0, -0.377, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	//18
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0, -0.377, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.443, -0.610, 0);
-	//19
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0.443, -0.610, 0);
-	glColor3f(0.2, 0.2, 0.2);
-	glVertex3f(0.2743, -0.089, 0);
-	glColor3f(1, 0.95, 0.01);
-	glVertex3f(0, 0, d);
-
-	glEnd();
-
+	//draw_star3D(color[0], color[1], color[2]);
+	//switch (color_index)
+	//{
+	//case 0:
+	//	if (++color[1] == 255)
+	//		color_index++;
+	//	break;
+	//case 1:
+	//	if (--color[0] == 0)
+	//		color_index++;
+	//	break;
+	//case 2:
+	//	if (++color[2] == 255)
+	//		color_index++;
+	//	break;
+	//case 3:
+	//	if (--color[1] == 0)
+	//		color_index++;
+	//	break;
+	//case 4:
+	//	if (++color[0] == 255)
+	//		color_index++;
+	//	break;
+	//case 5:
+	//	if (--color[2] == 0)
+	//		color_index = 0;
+	//	break;
+	//}
 	glPopMatrix();
 	// Increase The Rotation Variable For The Triangle ( NEW )
 	g_triangle_rotation += g_rotation_speed;
@@ -270,23 +455,23 @@ void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)  
 		exit(0);   // Exit The Program
 		break;
 	case GLFW_KEY_KP_ADD: // '+'
-		g_rotation_speed += 0.01;
+		g_rotation_speed += 0.2;
 		break;
 	case GLFW_KEY_KP_SUBTRACT: // '-'
-		g_rotation_speed -= 0.01;
+		g_rotation_speed -= 0.2;
 		break;
 
 	case GLFW_KEY_UP:
-		g_offset_y += 0.05;
+		g_offset_y += 0.01;
 		break;
 	case GLFW_KEY_DOWN:
-		g_offset_y -= 0.05;
+		g_offset_y -= 0.01;
 		break;
 	case GLFW_KEY_LEFT:
-		g_offset_x -= 0.05;
+		g_offset_x -= 0.01;
 		break;
 	case GLFW_KEY_RIGHT:
-		g_offset_x += 0.05;
+		g_offset_x += 0.01;
 		break;
 	default:        // Now Wrap It Up
 		break;
@@ -297,7 +482,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)  
 int main(int argc, char** argv)
 {
 	// init global variable
-	g_rotation_speed = 0.02f;
+	g_rotation_speed = 1.0f;
 	g_triangle_rotation = 0;
 	g_offset_x = 0;
 	g_offset_y = 0;
