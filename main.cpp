@@ -1,6 +1,7 @@
 
 // Standard Header For Most Programs
 #include <windows.h>   
+#include <cmath>
 // The GL Header
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -48,17 +49,17 @@ void draw_star3D(float r, float g, float b)
 	glVertex3f(0.718, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.2743, -0.089, 0);
 	//1
 	glColor3f(r, g, b);
 	glVertex3f(0.718, 0.233, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.195, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
 	//2
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.195, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0.755, 0);
@@ -69,10 +70,10 @@ void draw_star3D(float r, float g, float b)
 	glVertex3f(0, 0, d);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0.755, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.195, 0.233, 0);
 	//4
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.195, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(-0.718, 0.233, 0);
@@ -83,33 +84,33 @@ void draw_star3D(float r, float g, float b)
 	glVertex3f(0, 0, d);
 	glColor3f(r, g, b);
 	glVertex3f(-0.718, 0.233, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.2743, -0.089, 0);
 	//6	
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.2743, -0.089, 0);
 	glColor3f(r, g, b);
 	glVertex3f(-0.443, -0.610, 0);
 	//7
 	glColor3f(r, g, b);
 	glVertex3f(-0.443, -0.610, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0, -0.377, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
 	//8
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0, -0.377, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0.443, -0.610, 0);
 	//9
 	glColor3f(r, g, b);
 	glVertex3f(0.443, -0.610, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.2743, -0.089, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
@@ -119,17 +120,17 @@ void draw_star3D(float r, float g, float b)
 	glVertex3f(0.718, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.2743, -0.089, 0);
 	//11
 	glColor3f(r, g, b);
 	glVertex3f(0.718, 0.233, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.195, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
 	//12
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.195, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0.755, 0);
@@ -140,10 +141,10 @@ void draw_star3D(float r, float g, float b)
 	glVertex3f(0, 0, d);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0.755, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.195, 0.233, 0);
 	//14
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.195, 0.233, 0);
 	glColor3f(r, g, b);
 	glVertex3f(-0.718, 0.233, 0);
@@ -154,33 +155,33 @@ void draw_star3D(float r, float g, float b)
 	glVertex3f(0, 0, d);
 	glColor3f(r, g, b);
 	glVertex3f(-0.718, 0.233, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.2743, -0.089, 0);
 	//16	
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(-0.2743, -0.089, 0);
 	glColor3f(r, g, b);
 	glVertex3f(-0.443, -0.610, 0);
 	//17
 	glColor3f(r, g, b);
 	glVertex3f(-0.443, -0.610, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0, -0.377, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
 	//18
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0, -0.377, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0.443, -0.610, 0);
 	//19
 	glColor3f(r, g, b);
 	glVertex3f(0.443, -0.610, 0);
-	glColor3f(r / 10, g / 10, b / 10);
+	glColor3f(r / 3, g / 3, b / 3);
 	glVertex3f(0.2743, -0.089, 0);
 	glColor3f(r, g, b);
 	glVertex3f(0, 0, d);
@@ -343,7 +344,7 @@ void display(void)   // Create The Display Function
 	glLoadIdentity();		// Reset The Current Modelview Matrix
 	glPushMatrix();
 	// Move Left 1.5 Units And Into The Screen 6.0
-	glTranslatef(g_offset_x, g_offset_y, 0.0f);
+	glTranslatef(g_offset_x, g_offset_y + sin(g_triangle_rotation * asin(1) / 90) / 6, 0.0f);
 	// Rotate The Triangle On The Y axis
 	glRotatef(g_triangle_rotation, 0.0f, 1.0f, 0.0f);
 	//glBegin(GL_TRIANGLES);		// Drawing Using Triangles
@@ -373,51 +374,18 @@ void display(void)   // Create The Display Function
 	//glVertex3f(-0.6f,-0.6f, 0.6f);	// Right Of Triangle (Left)
 	//glEnd();			// Finished Drawing The Triangle
 
-	//float n = 0.9;
-
+	//// 2D line star
 	//glBegin(GL_LINE_LOOP);
-	//glColor3f(0.2,0.2,0.2);
-	//glVertex2f(-1.0*n, 0.26 * n);
-	//glColor3f(1,0.95,0.01);
-	//glVertex2f(1.0 * n, 0.26 * n);
-	//glColor3f(0, 1, 1);
-	//glVertex2f(-0.6 * n, -0.9 * n);
-	//glColor3f(1,0.95,0.01);
-	//glVertex2f(0, 1 * n);
-	//glColor3f(1, 0, 1);
-	//glVertex2f(0.6 * n, -0.9 * n);
+	//glColor3f(1,1,1);
+	//glVertex2f(0.718, 0.233);
+	//glVertex2f(-0.718, 0.233);
+	//glVertex2f(0.443, -0.610);
+	//glVertex2f(0, 0.755);
+	//glVertex2f(-0.443, -0.610);	
 	//glEnd();	
 
 	draw_star3D();
-
-	//draw_star3D(color[0], color[1], color[2]);
-	//switch (color_index)
-	//{
-	//case 0:
-	//	if (++color[1] == 255)
-	//		color_index++;
-	//	break;
-	//case 1:
-	//	if (--color[0] == 0)
-	//		color_index++;
-	//	break;
-	//case 2:
-	//	if (++color[2] == 255)
-	//		color_index++;
-	//	break;
-	//case 3:
-	//	if (--color[1] == 0)
-	//		color_index++;
-	//	break;
-	//case 4:
-	//	if (++color[0] == 255)
-	//		color_index++;
-	//	break;
-	//case 5:
-	//	if (--color[2] == 0)
-	//		color_index = 0;
-	//	break;
-	//}
+	
 	glPopMatrix();
 	// Increase The Rotation Variable For The Triangle ( NEW )
 	g_triangle_rotation += g_rotation_speed;
@@ -468,7 +436,7 @@ void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)  
 		g_offset_y -= 0.01;
 		break;
 	case GLFW_KEY_LEFT:
-		g_offset_x -= 0.01;
+		//g_offset_x -= 0.01;
 		break;
 	case GLFW_KEY_RIGHT:
 		g_offset_x += 0.01;
